@@ -12,12 +12,12 @@
 		hideForm		= 0;
 	*/
 
-	var defaultKey		= '', // Unique master Xively API key to be used as a default
-		defaultFeeds	= [], // Comma separated array of Xively Feed ID numbers
+	var defaultKey		= 'YlczYuKio7zObc2F0MdEJSeXt5rqb74r5vqFNnzkNVwrbpa0', // Unique master Xively API key to be used as a default
+		defaultFeeds	= [789742651], // Comma separated array of Xively Feed ID numbers
 		applicationName	= '', // Replaces Xively logo in the header
-		dataDuration	= '', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
-		dataInterval	= 0, // Default interval for data to be displayed (in seconds)
-		dataColor		= '', // CSS HEX value of color to represent data (omit leading #)
+		dataDuration	= '90days', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
+		dataInterval	= 10800, // Default interval for data to be displayed (in seconds)
+		dataColor		= '0A1922', // CSS HEX value of color to represent data (omit leading #)
 		hideForm		= 0; // To hide input form use value of 1, otherwise set to 0
 
 // Function Declarations
@@ -430,25 +430,4 @@
 			xively.feed.get(61916, function(data) {
 				if(data.id == 61916) {
 					$("#apiKeyInput").prop('disabled', true);
-					$('#welcome').addClass('hidden');
-					$('#validApiKey').removeClass('hidden');
-					$('#invalidApiKey').addClass('hidden');
-				} else {
-					$('#welcome').addClass('hidden');
-					$('#validApiKey').addClass('hidden');
-					$('#invalidApiKey').removeClass('hidden');
-				}
-			});
-		}
-		return false;
-	});
-
-	$('#setFeeds').click(function() {
-		setApiKey($('#apiKeyInput').val());
-		feeds = $('#feedsInput').val().replace(/\s+/g, '').split(',');
-		window.location = './index.html#key=' + $('#apiKeyInput').val() + '&feeds=' + $('#feedsInput').val();
-		return false;
-	});
-// END Initialization
-
-})( jQuery );
+					$('#
